@@ -1,5 +1,5 @@
-**📈 Predictive Dashboard Generato
-**
+**📈 Predictive Dashboard Generator**
+
 Live Demo: Streamlit App
 Author: Vikrant Thenge
 Tech Stack: Python · Streamlit · Pandas · Scikit-learn · Prophet · Plotly
