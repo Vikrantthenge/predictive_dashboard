@@ -208,27 +208,64 @@ if len(Xy) < 60:
     st.warning("Data has fewer than 60 usable rows after feature engineering. Forecasts may be unstable.")
 
 # ---------------- Train / Evaluate ----------------
+import numpy as np
+import streamlit as st
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.model_selection import train_test_split
+
+# Split features and target
 X = Xy[feats]
 y = Xy["y"]
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size/100.0, shuffle=False)
 
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=test_size / 100.0, shuffle=False
+)
+
+# Model selection
 if model_name == "Linear Regression":
     model = LinearRegression()
 else:
     model = RandomForestRegressor(n_estimators=300, random_state=42)
 
+# Fit model
 model.fit(X_train, y_train)
+
+# Predict
 pred = model.predict(X_test)
 
-mae = mean_absolute_error(y_test, pred)
-rmse = mean_squared_error(y_test, pred, squared=False)
-r2 = r2_score(y_test, pred)
+# Ensure predictions and targets are 1D arrays
+y_test = np.ravel(np.array(y_test))
+pred = np.ravel(np.array(pred))
 
-# ---------------- KPI cards ----------------
-k1, k2, k3 = st.columns(3)
-k1.metric("MAE", f"{mae:,.2f}")
-k2.metric("RMSE", f"{rmse:,.2f}")
-k3.metric("R²", f"{r2:,.3f}")
+# Optional debug info
+with st.expander("🔍 Debug Info"):
+    st.write("📊 y_test sample:", y_test[:5])
+    st.write("📈 pred sample:", pred[:5])
+    st.write("🧮 Shapes:", y_test.shape, pred.shape)
+    st.write("✅ Length match:", len(y_test) == len(pred))
+
+# Validate lengths
+assert len(y_test) == len(pred), "Mismatch in prediction and test label lengths"
+
+# Metrics calculation with error handling
+try:
+    mae = mean_absolute_error(y_test, pred)
+    rmse = mean_squared_error(y_test, pred, squared=False)
+    r2 = r2_score(y_test, pred)
+
+    # Display metrics
+    st.subheader("📊 Model Evaluation Metrics")
+    st.metric("MAE (Mean Absolute Error)", f"{mae:.2f}")
+    st.metric("RMSE (Root Mean Squared Error)", f"{rmse:.2f}")
+    st.metric("R² Score", f"{r2:.2f}")
+
+except Exception as e:
+    st.error(f"❌ Metric calculation failed: {e}")
+    mae, rmse, r2 = None, None, None
+
 
 # ---------------- Charts ----------------
 # Actual vs Predicted
