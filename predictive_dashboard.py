@@ -182,9 +182,6 @@ st.plotly_chart(fig, use_container_width=True)
 
 # --- Forecast Future ---
 last_date = Xy["ds"].max()
-future_dates = pd.date_range(last_date
-# --- Forecast Future ---
-last_date = Xy["ds"].max()
 future_dates = pd.date_range(last_date + pd.Timedelta(days=1), periods=horizon, freq="D")
 fcast_frame = pd.DataFrame({date_col: future_dates})
 tmp = pd.concat([df[[date_col, target_col]].copy(), fcast_frame], ignore_index=True)
