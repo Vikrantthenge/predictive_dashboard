@@ -1,6 +1,24 @@
 # Display logo from web URL above header
+
 import streamlit as st
-st.image("https://raw.githubusercontent.com/Vikrantthenge/predictive_dashboard/main/predictive_dashboard_banner.png", use_container_width=True)
+
+# Smaller Banner Image (HTML for size control)
+st.markdown(
+    """
+    <div style='text-align: center'>
+        <img src='https://raw.githubusercontent.com/Vikrantthenge/predictive_dashboard/main/predictive_dashboard_banner.png' width='400'/>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# Title and Subtitle
+st.markdown("<h1 style='text-align: center; color: #4B8BBE;'>Predictive Dashboard</h1>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center; color: #6C757D;'>Empowering decisions through data-driven insights</h4>", unsafe_allow_html=True)
+st.markdown("---")
+
+# import streamlit as st
+# st.image("https://raw.githubusercontent.com/Vikrantthenge/predictive_dashboard/main/predictive_dashboard_banner.png", use_container_width=True)
 
 
 import os
