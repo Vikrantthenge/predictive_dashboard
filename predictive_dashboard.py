@@ -363,12 +363,58 @@ st.subheader("Actual vs Predicted Results")
 st.dataframe(results_df)
 
 # Optional: Download button
+import pandas as pd
+import numpy as np
+import streamlit as st
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+
+# Assuming X and y are already defined earlier in your script
+
+# Train/test split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# Model selection via Streamlit
+st.subheader("Choose Prediction Model")
+model_choice = st.selectbox("Select model", ["Linear Regression", "Random Forest"])
+
+if model_choice == "Linear Regression":
+    model = LinearRegression()
+elif model_choice == "Random Forest":
+    model = RandomForestRegressor(n_estimators=100, random_state=42)
+
+# Train model
+model.fit(X_train, y_train)
+
+# Make predictions
+pred = model.predict(X_test)
+
+# Flatten arrays if needed
+y_test = np.ravel(y_test)
+pred = np.ravel(pred)
+
+# Create results DataFrame with index alignment
+results_df = pd.DataFrame({
+    "actual": pd.Series(y_test, index=X_test.index),
+    "predicted": pd.Series(pred, index=X_test.index)
+})
+
+# Display results
+st.subheader("Actual vs Predicted Results")
+st.dataframe(results_df)
+
+# ✅ Download button with unique key
 st.download_button(
     label="Download Results as CSV",
     data=results_df.to_csv(index=False).encode("utf-8"),
     file_name="prediction_results.csv",
-    mime="text/csv"
+    mime="text/csv",
+    key="download_results_csv"
 )
+
 
 # Metrics calculation with error handling
 try:
