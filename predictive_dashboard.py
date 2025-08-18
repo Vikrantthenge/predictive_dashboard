@@ -1,3 +1,9 @@
+# Display logo from web URL above header
+st.image("https://github.com/Vikrantthenge/predictive_dashboard/tree/main/asset", use_column_width=True)
+
+# Main header
+st.markdown("<h1 style='text-align: center;'>📈 Predictive Dashboard Generator</h1>", unsafe_allow_html=True)
+
 import os
 import io
 import numpy as np
