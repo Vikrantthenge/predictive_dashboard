@@ -219,9 +219,60 @@ from sklearn.model_selection import train_test_split
 X = Xy[feats]
 y = Xy["y"]
 
-# Train/test split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+import pandas as pd
+import numpy as np
+import streamlit as st
 
+# Train/test split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# Model selection via Streamlit
+model_choice = st.selectbox("Choose model", ["Linear Regression", "Random Forest"])
+
+if model_choice == "Linear Regression":
+    model = LinearRegression()
+elif model_choice == "Random Forest":
+    model = RandomForestRegressor(n_estimators=100, random_state=42)
+
+# Train model
+model.fit(X_train, y_train)
+
+# Make predictions
+pred = model.predict(X_test)
+
+# Flatten arrays if needed
+y_test = np.ravel(y_test)
+pred = np.ravel(pred)
+
+# Create results DataFrame with index alignment
+results_df = pd.DataFrame({
+    "actual": pd.Series(y_test, index=X_test.index),
+    "predicted": pd.Series(pred, index=X_test.index)
+})
+
+# Display results
+st.subheader("Actual vs Predicted Results")
+st.dataframe(results_df)
+
+# Optional: Download button
+st.download_button(
+    label="Download Results as CSV",
+    data=results_df.to_csv(index=False).encode("utf-8"),
+    file_name="prediction_results.csv",
+    mime="text/csv"
+)
+
+
+# ✅ Define model here
+model = LinearRegression()  # or whichever model you're using
+
+# Fit model
+model.fit(X_train, y_train)
 # Train model
 model.fit(X_train, y_train)
 
