@@ -1,6 +1,6 @@
 # Display logo from web URL above header
 import streamlit as st
-st.image("https://raw.githubusercontent.com/Vikrantthenge/predictive_dashboard/main/predictive_dashboard_banner.png", use_column_width=True)
+st.image("https://raw.githubusercontent.com/Vikrantthenge/predictive_dashboard/main/predictive_dashboard_banner.png", use_container_width=True)
 
 
 import os
