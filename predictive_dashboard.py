@@ -253,7 +253,8 @@ assert len(y_test) == len(pred), "Mismatch in prediction and test label lengths"
 # Metrics calculation with error handling
 try:
     mae = mean_absolute_error(y_test, pred)
-    rmse = mean_squared_error(y_test, pred, squared=False)
+    mse = mean_squared_error(y_test, pred)
+    rmse = np.sqrt(mse)
     r2 = r2_score(y_test, pred)
 
     # Display metrics
