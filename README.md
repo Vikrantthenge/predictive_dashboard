@@ -1,25 +1,23 @@
+📈 Predictive Dashboard Generator
+Live Demo: Streamlit App
+Author: Vikrant Thenge
+Tech Stack: Python · Streamlit · Pandas · Scikit-learn · Prophet · Plotly
 
-# Predictive Dashboard Generator (Streamlit)
+🚀 Overview
+The Predictive Dashboard Generator is a recruiter-facing web app that transforms raw business data into actionable forecasts. Users can upload their own CSV or use sample data, select forecasting models, and visualize predictions with confidence intervals — all through a clean, branded UI.
+This app demonstrates end-to-end data engineering, predictive modeling, and dashboard design skills tailored for real-world decision-making.
 
-Interactive **time-series forecasting** dashboard built with **Streamlit**, **scikit-learn**, **pandas**, and **Plotly**.
+🎯 Key Features
+- 📁 Upload your own CSV or use built-in sample data
+- 📊 Select target metric and forecasting model (Linear, Random Forest, Prophet)
+- 📅 Visualize trends, seasonality, and future predictions
+- 🧠 Filter by product, region, or time period
+- 📥 Download forecast results
+- 🖼️ Branded UI with image previews and sidebar controls
 
-## Features
-- Upload your CSV or use the included `sales_data.csv`
-- Choose **Linear Regression** or **Random Forest**
-- KPI cards: **MAE, RMSE, R²**
-- Charts: **Actual vs Predicted**, **History + Forecast**
-- Filters for categorical columns (e.g., product, region)
-- Monthly aggregations & KPIs
-- Download forecasts as CSV
-
-## Run Locally
-```bash
-pip install -r requirements.txt
-streamlit run predictive_dashboard.py
-```
-
-## Deploy on Streamlit Community Cloud
-1. Push files to a **public GitHub** repo.
-2. Go to https://streamlit.io/cloud → **New app**.
-3. Set **Main file path** to `predictive_dashboard.py`.
-4. Deploy and share your URL.
+🛠️ How to Use
+- Launch the app via the Live Demo
+- Upload your CSV or use the sample dataset
+- Choose your target column and forecasting model
+- Apply filters and view predictions
+- Download results or explore visual insights
