@@ -1,3 +1,17 @@
+from PIL import Image
+
+# Load and display logo
+logo = Image.open("predictive_dashboard_banner.png")
+st.image(logo, width=150)  # Adjust width as needed
+
+# Optional: Add a centered title below the logo
+st.markdown("<h1 style='text-align: center;'>📈 Predictive Dashboard</h1>", unsafe_allow_html=True)
+ol1, col2 = st.columns([1, 5])
+with col1:
+    st.image("logo.png", width=100)
+with col2:
+    st.markdown("<h1 style='padding-top: 10px;'>📈 Predictive Dashboard</h1>", unsafe_allow_html=True)
+
 import os
 import io
 import numpy as np
