@@ -240,58 +240,12 @@ pred = model.predict(X_test)
 y_test = np.ravel(y_test)
 pred = np.ravel(pred)
 
-X = df[feature_columns]
-y = df[target_column]
 
- Train/test split
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
-)
-
-# Model selection via Streamlit
-st.subheader("Choose Prediction Model")
-model_choice = st.selectbox(
-    "Select model",
-    ["Linear Regression", "Random Forest"],
-    key="model_selector"
-)
-
-# Initialize model
-if model_choice == "Linear Regression":
-    model = LinearRegression()
-elif model_choice == "Random Forest":
-    model = RandomForestRegressor(n_estimators=100, random_state=42)
-
-# Train model
-model.fit(X_train, y_train)
-
-# Make predictions
-pred = model.predict(X_test)
-
-# Flatten arrays
-y_test = np.ravel(y_test)
-pred = np.ravel(pred)
-
-
-
-# Create results DataFrame
+# Create results DataFrame with index alignment
 results_df = pd.DataFrame({
     "actual": pd.Series(y_test, index=X_test.index),
     "predicted": pd.Series(pred, index=X_test.index)
 })
-
-# Display results
-st.subheader("Actual vs Predicted Results")
-st.dataframe(results_df)
-
-# Download button
-st.download_button(
-    label="Download Results as CSV",
-    data=results_df.to_csv(index=False).encode("utf-8"),
-    file_name="prediction_results.csv",
-    mime="text/csv",
-    key="download_results_csv"
-)
 
 # Display results
 st.subheader("Actual vs Predicted Results")
