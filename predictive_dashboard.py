@@ -183,3 +183,29 @@ st.plotly_chart(fig, use_container_width=True)
 # --- Forecast Future ---
 last_date = Xy["ds"].max()
 future_dates = pd.date_range(last_date
+# --- Forecast Future ---
+last_date = Xy["ds"].max()
+future_dates = pd.date_range(last_date + pd.Timedelta(days=1), periods=horizon, freq="D")
+fcast_frame = pd.DataFrame({date_col: future_dates})
+tmp = pd.concat([df[[date_col, target_col]].copy(), fcast_frame], ignore_index=True)
+tmp[date_col] = pd.to_datetime(tmp[date_col])
+
+F, feats2 = make_features(tmp, date_col, target_col)
+F_future = F[F["ds"].isin(future_dates)]
+
+if len(F_future) == 0:
+    st.warning("Not enough history to generate features for the requested horizon. Try a smaller horizon or ensure daily frequency.")
+else:
+    yhat = model.predict(F_future[feats])
+    forecast_df = pd.DataFrame({"date": F_future["ds"], "forecast": yhat})
+    hist = Xy[["ds", "y"]].rename(columns={"ds": "date", "y": "value"})
+    hist["series"] = "history"
+    fplot = forecast_df.rename(columns={"forecast": "value"})
+    fplot["series"] = "forecast"
+    chart_df = pd.concat([hist, fplot], ignore_index=True)
+    fig2 = px.line(chart_df, x="date", y="value", color="series", title="History + Forecast")
+    st.plotly_chart(fig2, use_container_width=True)
+
+    if download_toggle:
+        csv = forecast_df.to_csv(index=False).encode("utf-8")
+        st.download_button("⬇️ Download forecast CSV", data=csv, file_name="forecast.csv", mime="text/csv")
