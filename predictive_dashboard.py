@@ -1,5 +1,5 @@
 # Display logo from web URL above header
-st.image("https://github.com/Vikrantthenge/predictive_dashboard/blob/main/predictive_dashboard_banner.png", use_column_width=True)
+st.image("https://raw.githubusercontent.com/Vikrantthenge/predictive_dashboard/main/predictive_dashboard_banner.png", use_column_width=True), use_column_width=True)
 
 # Main header
 st.markdown("<h1 style='text-align: center;'>📈 Predictive Dashboard Generator</h1>", unsafe_allow_html=True)
