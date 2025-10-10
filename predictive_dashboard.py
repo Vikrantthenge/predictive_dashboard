@@ -177,7 +177,7 @@ else:
     forecast_df = pd.DataFrame({"date": F_future["ds"], "forecast": yhat})
     hist = Xy[["ds", "y"]].rename(columns={"ds": "date", "y": "value"})
     hist["series"] = "history"
-    fplot = forecast_df.rename(columns={"forecast": "value
+    fplot = forecast_df.rename(columns={"forecast": "value"})
     fplot["series"] = "forecast"
     chart_df = pd.concat([hist, fplot], ignore_index=True)
 
