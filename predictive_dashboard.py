@@ -102,6 +102,9 @@ def make_features(frame, date_col, target_col):
     feats = ["t","dow","dom","month","lag_1","lag_7","lag_14","roll_7","roll_14"]
     return Xy, feats
 
+st.write("📋 Columns in DataFrame:", df.columns.tolist())
+st.write("🗓️ Date column:", date_col)
+st.write("🎯 Target column:", target_col)
 Xy, feats = make_features(df, date_col, target_col)
 X = Xy[feats]
 y = Xy["y"]
