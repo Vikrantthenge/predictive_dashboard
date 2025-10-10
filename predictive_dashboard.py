@@ -187,26 +187,13 @@ st.subheader("📈 Smoothed Performance Trend")
 
 # Ensure target column is numeric before rolling
 df[target_col] = pd.to_numeric(df[target_col], errors="coerce")
-df['moving_avg'] = df[target_col].rolling(window=5).mean()
-df.dropna(subset=['moving_avg'], inplace=True)
-
-fig = px.line(df, x=date_col, y='moving_avg',
-              #title='📈 Smoothed Performance Trend',
-              labels={'moving_avg': 'Moving Average'},
-              template='plotly_dark')
-
-fig.update_traces(line=dict(color='orange', width=3))
-fig.update_layout(title_font=dict(size=20), title_x=0.0)
-
-st.plotly_chart(fig, use_container_width=True)
-
 
 # Calculate moving average
 df['moving_avg'] = df[target_col].rolling(window=5).mean()
 df.dropna(subset=['moving_avg'], inplace=True)
 
 # Create Plotly chart
-fig = px.line(df, x='date', y='moving_avg',
+fig = px.line(df, x=date_col, y='moving_avg',
               title='📈 Smoothed Performance Trend',
               labels={'moving_avg': 'Moving Average'},
               template='plotly_dark')
@@ -216,6 +203,9 @@ fig.update_layout(
     title_font=dict(size=20),
     title_x=0.0  # Left-aligned title
 )
+
+st.plotly_chart(fig, use_container_width=True)
+
 
 # Display in Streamlit
 st.plotly_chart(fig, use_container_width=True)
