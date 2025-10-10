@@ -115,9 +115,16 @@ elif use_sample:
     try:
         df, loaded_fname = load_sample()
         st.info(f"✅ Loaded sample file: {loaded_fname}")
+        # --- Validate Required Columns ---
+missing = [col for col in [date_col, target_col] if col not in df.columns]
+if missing:
+    st.error(f"❌ Required columns missing: {', '.join(missing)} not found in uploaded data.")
+    st.write("📋 Available columns:", df.columns.tolist())
+    st.stop()
+
     except Exception as e:
-        st.error(f"❌ Sample load failed: {e}")
-        st.stop()
+    st.error(f"❌ Sample load failed: {e}")
+    st.stop()
 else:
     st.error("❌ No data source selected. Please upload a CSV or enable sample data.")
     st.stop()
@@ -144,7 +151,7 @@ except Exception as e:
 demo_data = np.random.randn(100, 3)
 demo_df = pd.DataFrame(demo_data, columns=["Feature A", "Feature B", "Feature C"])
 
-st.subheader("Dashboard Overview")
+st.subheader("📊  Dashboard Overview")
 st.line_chart(demo_df[selected_feature])
 
 
