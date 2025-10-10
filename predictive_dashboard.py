@@ -185,6 +185,7 @@ else:
 # --- Smoothed Performance Trend ---
 st.subheader("📈 Smoothed Performance Trend")
 
+# Ensure target column is numeric before rolling
 df[target_col] = pd.to_numeric(df[target_col], errors="coerce")
 df['moving_avg'] = df[target_col].rolling(window=5).mean()
 df.dropna(subset=['moving_avg'], inplace=True)
