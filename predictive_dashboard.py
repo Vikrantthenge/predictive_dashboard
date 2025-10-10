@@ -68,9 +68,9 @@ df = pd.DataFrame({
 df['moving_avg'] = df['value'].rolling(window=5).mean()
 
 fig = px.line(df, x='date', y='moving_avg',
-              title='📈 Smoothed Performance Trend',
-              labels={'moving_avg': 'Moving Average'},
-              template='plotly_dark')
+ title='📈 Smoothed Performance Trend',
+labels={'moving_avg': 'Moving Average'},
+template='plotly_dark')
 
 fig.update_traces(line=dict(color='orange', width=3))
 fig.update_layout(title_font=dict(size=20), title_x=0.5)
