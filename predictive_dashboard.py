@@ -40,29 +40,14 @@ st.markdown("""
     -webkit-text-fill-color: transparent;
     margin-top: 10px;
 }
-# --- Themed Title Block with Blue Background ---
-st.markdown("""
-<style>
-.title-container {
-    background-color: #007BFF;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    margin-top: 10px;
-}
-.gradient-title {
-    font-size: 32px;
-    font-weight: 700;
-    background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 </style>
-
-<div class='title-container'>
-    <div class='gradient-title'>📈🔮 Predictive Dashboard 🔮📈</div>
+<div style='background-color: #007BFF; padding: 20px; border-radius: 12px; text-align: center;'>
+    <h1 class='gradient-title'>📈🔮 Predictive Dashboard 🔮📈</h1>
 </div>
 """, unsafe_allow_html=True)
+
+st.markdown("<h4 style='text-align: center; color: #6C757D;'>Empowering decisions through data-driven insights</h4>", unsafe_allow_html=True)
+st.markdown("---")
 
 # --- Sidebar Inputs ---
 st.sidebar.header("User Input")
