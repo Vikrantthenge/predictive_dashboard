@@ -281,5 +281,11 @@ else:
         st.download_button("⬇️ Download forecast CSV", data=csv, file_name="forecast.csv", mime="text/csv")
 
 # --- Footer Branding ---
-st.markdown("---")
-st.markdown("<h5 style='text-align: center;'>🔧 Built by Vikrant Thenge | 📫 Reach out for demos, resume access, or collaboration</h5>", unsafe_allow_html=True)
+st.markdown("---", unsafe_allow_html=True)
+st.markdown("""
+<div style='text-align: center; font-size: 16px; padding-top: 10px;'>
+    <span style='font-size: 18px;'>🔧 <strong>Built by Vikrant Thenge</strong></span><br>
+    <span style='color: #888;'>📊 Data Analyst | 🤖 Automation Strategist | 🎯 Recruiter-Ready Dashboards</span><br><br>
+    <a href='mailto:vikrant.thenge@gmail.com' style='text-decoration: none; font-weight: bold;'>📫 Reach out for demos, resume access, or collaboration</a>
+</div>
+""", unsafe_allow_html=True)
