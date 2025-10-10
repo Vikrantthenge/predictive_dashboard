@@ -23,6 +23,7 @@ st.set_page_config(page_title="Predictive Dashboard Generator", page_icon="📈"
 # --- Banner and Title ---
 # --- Header with Gradient Title ---
 
+
 st.markdown("""
 <style>
 .gradient-title {
