@@ -29,19 +29,27 @@ st.markdown("""
 
 """, unsafe_allow_html=True)
 
+# --- Predictive Dashboard Header (Styled to Match Uploaded Visual) ---
 st.markdown("""
 <style>
-.gradient-title {
-    font-size: 36px;
-    font-weight: 700;
+.title-box {
+    background: linear-gradient(90deg, #ff6a00, #ee0979, #9b59b6, #00c6ff);
+    padding: 20px;
+    border-radius: 16px;
     text-align: center;
-    background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.title-text {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
 }
 </style>
-<h1 class='gradient-title'>📈🔮 Predictive Dashboard 🔮📈</h1>
+
+<div class='title-box'>
+    <div class='title-text'>📈🔮 Predictive Dashboard 🔮📈</div>
+</div>
 """, unsafe_allow_html=True)
 
 st.markdown("<h4 style='text-align: center; color: #6C757D;'>Empowering decisions through data-driven insights</h4>", unsafe_allow_html=True)
