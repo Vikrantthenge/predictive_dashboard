@@ -1,7 +1,7 @@
 # 📈 Predictive Dashboard Generator
 
 [![Live Demo](https://img.shields.io/badge/🚀-Streamlit_App-red?style=for-the-badge)](#)
-[![Author](https://img.shields.io/badge/GitHub-Vikrant_Thenge-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vikrantthenge)
+[![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)
 [![Tech Stack](https://img.shields.io/badge/🧠-Python_·_Streamlit_·_Pandas_·_Scikit--learn_·_Prophet_·_Plotly-purple?style=for-the-badge)](#)
 ---
 
