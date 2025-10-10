@@ -65,10 +65,6 @@ scikit-learn>=1.3.0
 plotly>=5.18.0
 prophet>=1.1.5
 
-**## 🖼️ App Preview**
 
-> 📌 *Preview image coming soon — this section will showcase a screenshot or GIF of the dashboard in action.*
-
-![Dashboard Preview Placeholder](https://via.placeholder.com/800x400.png?text=Dashboard+Preview+Coming+Soon)
 
 
