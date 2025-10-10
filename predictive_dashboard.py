@@ -42,7 +42,7 @@ st.sidebar.markdown("Upload your CSV or use the sample. Required: a **date** col
 uploaded = st.sidebar.file_uploader("Upload CSV", type=["csv"])
 use_sample = st.sidebar.checkbox("Use sample data", value=(uploaded is None))
 encoding_choice = st.sidebar.selectbox("File encoding", ["utf-8", "ISO-8859-1", "latin1"], index=0)
-target_col = st.sidebar.text_input("Target column (numeric)", "sales")
+target_col = st.sidebar.text_input("Target column (numeric)", "failures")
 date_col = st.sidebar.text_input("Date column", "date")
 category_cols = st.sidebar.text_input("Category columns (comma-separated, optional)", "product,region")
 model_name = st.sidebar.selectbox("Model", ["Linear Regression", "Random Forest"])
@@ -116,7 +116,7 @@ try:
 except Exception as e:
     st.error(f"❌ Date parsing failed: {e}")
     st.stop()
-    
+
 # --- Demo Chart ---
 demo_data = np.random.randn(100, 3)
 demo_df = pd.DataFrame(demo_data, columns=["Feature A", "Feature B", "Feature C"])
