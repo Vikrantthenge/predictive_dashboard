@@ -185,7 +185,6 @@ else:
 # --- Smoothed Performance Trend ---
 st.subheader("📈 Smoothed Performance Trend")
 
-# Ensure target column is numeric before rolling
 df[target_col] = pd.to_numeric(df[target_col], errors="coerce")
 df['moving_avg'] = df[target_col].rolling(window=5).mean()
 df.dropna(subset=['moving_avg'], inplace=True)
@@ -200,10 +199,6 @@ fig.update_layout(title_font=dict(size=20), title_x=0.0)
 
 st.plotly_chart(fig, use_container_width=True)
 
-
-# Calculate moving average
-df['moving_avg'] = df[target_col].rolling(window=5).mean()
-df.dropna(subset=['moving_avg'], inplace=True)
 
 # Create Plotly chart
 fig = px.line(df, x='date', y='moving_avg',
