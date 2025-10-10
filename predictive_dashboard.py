@@ -112,6 +112,21 @@ if 'df' in locals():
     st.write("🎯 Target column:", target_col)
 else:
     st.warning("⚠️ DataFrame not loaded yet. Please upload a CSV or use sample data.")
+
+    # --- Validate DataFrame before feature engineering ---
+if 'df' not in locals() or df.empty:
+    st.error("❌ DataFrame not loaded or is empty. Please upload a valid CSV or use sample data.")
+    st.stop()
+
+if date_col not in df.columns or target_col not in df.columns:
+    st.error(f"❌ Required columns missing: '{date_col}' or '{target_col}' not found in uploaded data.")
+    st.stop()
+
+try:
+    Xy, feats = make_features(df, date_col, target_col)
+except Exception as e:
+    st.error(f"❌ Feature engineering failed: {e}")
+    st.stop()
 Xy, feats = make_features(df, date_col, target_col)
 X = Xy[feats]
 y = Xy["y"]
