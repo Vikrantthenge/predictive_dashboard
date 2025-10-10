@@ -201,7 +201,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 
 # Calculate moving average
-df['moving_avg'] = df['value'].rolling(window=5).mean()
+df['moving_avg'] = df[target_col].rolling(window=5).mean()
 df.dropna(subset=['moving_avg'], inplace=True)
 
 # Create Plotly chart
