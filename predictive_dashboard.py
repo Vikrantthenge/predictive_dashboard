@@ -183,12 +183,26 @@ else:
 
     # Smoothed Line Graph Section -
 
-df = pd.DataFrame({
+# --- Smoothed Performance Trend ---
+trend_df = pd.DataFrame({
     'date': pd.date_range(start='2023-01-01', periods=30),
     'value': [2, 1.5, 2.2, 1.8, 2.5, 2.9, 3.1, 2.7, 2.4, 2.6,
               2.8, 3.0, 2.9, 2.7, 2.5, 2.3, 2.1, 1.9, 1.7, 1.5,
               1.3, 1.1, 0.9, 0.7, 0.5, 0.3, 0.1, -0.1, -0.3, -0.5]
 })
+
+trend_df['moving_avg'] = trend_df['value'].rolling(window=5).mean()
+trend_df.dropna(subset=['moving_avg'], inplace=True)
+
+fig = px.line(trend_df, x='date', y='moving_avg',
+              title='📈 Smoothed Performance Trend',
+              labels={'moving_avg': 'Moving Average'},
+              template='plotly_dark')
+
+fig.update_traces(line=dict(color='orange', width=3))
+fig.update_layout(title_font=dict(size=20), title_x=0.0)
+
+st.plotly_chart(fig, use_container_width=True)
 
 # Calculate moving average
 df['moving_avg'] = df['value'].rolling(window=5).mean()
