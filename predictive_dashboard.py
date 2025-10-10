@@ -284,17 +284,18 @@ st.markdown("""
     <span style='font-size: 18px;'>🔧 <strong>Built by Vikrant Thenge</strong></span><br>
     <span style='color: #888;'>📊 Data Analyst | 🤖 Automation Strategist | 🎯 Recruiter-Ready Dashboards</span><br><br>
 
-    <a href='mailto:vikrantthenge@outlook.com' style='text-decoration: none; margin: 0 10px;'>
-        <img src='https://img.icons8.com/color/48/000000/microsoft-outlook.png' alt='Outlook' width='28'/> 
+    <a href='mailto:vikrantthenge@outlook.com' style='text-decoration: none; margin: 0 10px;' title='Email'>
+        <img src='https://img.icons8.com/color/48/000000/microsoft-outlook.png' alt='Outlook' width='28'/>
     </a>
 
-    <a href='https://github.com/Vikrantthenge' target='_blank' style='text-decoration: none; margin: 0 10px;'>
+    <a href='https://github.com/Vikrantthenge' target='_blank' style='text-decoration: none; margin: 0 10px;' title='GitHub'>
         <img src='https://img.icons8.com/ios-glyphs/30/000000/github.png' alt='GitHub' width='28'/>
     </a>
 
-    <a href='https://www.linkedin.com/in/vthenge/' target='_blank' style='text-decoration: none; margin: 0 10px;'>
+    <a href='https://www.linkedin.com/in/vthenge/' target='_blank' style='text-decoration: none; margin: 0 10px;' title='LinkedIn'>
         <img src='https://img.icons8.com/color/48/000000/linkedin.png' alt='LinkedIn' width='28'/>
     </a>
 </div>
 """, unsafe_allow_html=True)
+
 
