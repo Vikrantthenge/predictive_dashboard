@@ -40,7 +40,7 @@ st.markdown("""
     margin-top: 10px;
 }
 </style>
-<h1 class='gradient-title'>📈🔮 Predictive Dashboard 📈🔮</h1>
+<h1 class='gradient-title'>📈🔮 Predictive Dashboard 🔮📈</h1>
 """, unsafe_allow_html=True)
 
 st.markdown("<h4 style='text-align: center; color: #6C757D;'>Empowering decisions through data-driven insights</h4>", unsafe_allow_html=True)
