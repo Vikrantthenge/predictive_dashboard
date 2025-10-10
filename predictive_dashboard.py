@@ -14,11 +14,14 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-# Optional models
+# ---------------------------
+# --- Optional Models ---
+# ---------------------------
 try:
     from prophet import Prophet
 except ImportError:
     Prophet = None
+
 try:
     import pmdarima as pm
 except ImportError:
@@ -76,10 +79,17 @@ encoding_choice = st.sidebar.selectbox("File encoding", ["utf-8", "ISO-8859-1", 
 target_col = st.sidebar.text_input("Target column (numeric)", "failures")
 date_col = st.sidebar.text_input("Date column", "date")
 category_cols = st.sidebar.text_input("Category columns (optional, comma-separated)", "product,region")
-model_name = st.sidebar.selectbox("Model", ["Linear Regression", "Random Forest", "Prophet", "ARIMA"])
 horizon = st.sidebar.number_input("Forecast horizon (days)", min_value=7, max_value=180, value=30, step=1)
 test_size = st.sidebar.slider("Test size (%)", min_value=10, max_value=40, value=20, step=5)
 download_toggle = st.sidebar.checkbox("Enable download", value=True)
+
+# Dynamically list available models
+available_models = ["Linear Regression", "Random Forest"]
+if Prophet is not None:
+    available_models.append("Prophet")
+if pm is not None:
+    available_models.append("ARIMA")
+model_name = st.sidebar.selectbox("Model", available_models)
 
 # ---------------------------
 # --- Synthetic Sample Generator ---
@@ -191,7 +201,7 @@ st.metric("Latest Smoothed Value", f"{latest_val:.2f}", delta=f"as of {latest_da
 def run_model_prediction(Xy, feats, model_name, horizon, test_size, enable_download=True):
     X = Xy[feats]
     y = Xy["y"]
-    
+
     if model_name in ["Linear Regression", "Random Forest"]:
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size/100.0, shuffle=False)
         model = LinearRegression() if model_name=="Linear Regression" else RandomForestRegressor(n_estimators=300, random_state=42)
@@ -222,11 +232,15 @@ def run_model_prediction(Xy, feats, model_name, horizon, test_size, enable_downl
         return model
 
     elif model_name == "ARIMA" and pm is not None:
-        model = pm.auto_arima(y, seasonal=False, stepwise=True)
-        forecast = model.predict(n_periods=horizon)
-        st.subheader("📈 ARIMA Forecast")
-        st.line_chart(pd.DataFrame({"Forecast": forecast}))
-        return model
+        try:
+            model = pm.auto_arima(y, seasonal=False, stepwise=True)
+            forecast = model.predict(n_periods=horizon)
+            st.subheader("📈 ARIMA Forecast")
+            st.line_chart(pd.DataFrame({"Forecast": forecast}))
+            return model
+        except Exception as e:
+            st.error(f"⚠️ ARIMA forecast failed: {e}")
+            return None
 
     else:
         st.error("❌ Unsupported model or library missing.")
@@ -248,7 +262,7 @@ tmp[date_col] = pd.to_datetime(tmp[date_col])
 F, feats2 = make_features(tmp, date_col, target_col)
 F_future = F[F["ds"].isin(future_dates)]
 
-if not F_future.empty:
+if not F_future.empty and model is not None:
     yhat = model.predict(F_future[feats])
     forecast_df = pd.DataFrame({"date": F_future["ds"], "forecast": yhat})
     hist = Xy[["ds","y"]].rename(columns={"ds":"date","y":"value"}).assign(series="history")
@@ -259,7 +273,7 @@ if not F_future.empty:
     if download_toggle:
         st.download_button("⬇️ Download Forecast CSV", forecast_df.to_csv(index=False).encode("utf-8"), "forecast.csv", "text/csv")
 else:
-    st.warning("⚠️ Not enough history to generate forecast for requested horizon.")
+    st.warning("⚠️ Not enough history or model unavailable to generate forecast.")
 
 # ---------------------------
 # --- Footer ---
