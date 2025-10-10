@@ -18,7 +18,28 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 # --- Page Config ---
-st.set_page_config(page_title="Predictive Dashboard Generator", page_icon="📈", layout="wide")
+# --- App Title with Flair ---
+st.markdown("""
+<style>
+.title-flair {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 2s infinite;
+    margin-top: 20px;
+}
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+</style>
+<div class='title-flair'>🚀 Predictive Dashboard</div>
+""", unsafe_allow_html=True)
+# st.set_page_config(page_title="Predictive Dashboard Generator", page_icon="📈", layout="wide")
 
 # --- Banner and Title ---
 st.markdown(
