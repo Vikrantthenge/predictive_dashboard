@@ -1,9 +1,8 @@
 # 📈 Predictive Dashboard Generator
 
-**Live Demo:** [Streamlit App](#)  
-**Author:** [Vikrant Thenge](https://github.com/vikrantthenge)  
-**Tech Stack:** Python · Streamlit · Pandas · Scikit-learn · Prophet · Plotly  
-
+[![Live Demo](https://img.shields.io/badge/🚀-Streamlit_App-red?style=for-the-badge)](#)
+[![Author](https://img.shields.io/badge/👨‍💻-Vikrant_Thenge-blue?style=for-the-badge)](https://github.com/vikrantthenge)
+[![Tech Stack](https://img.shields.io/badge/🧠-Python_·_Streamlit_·_Pandas_·_Scikit--learn_·_Prophet_·_Plotly-purple?style=for-the-badge)](#)
 ---
 
 ## 🚀 Overview
