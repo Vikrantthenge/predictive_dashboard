@@ -22,12 +22,7 @@ st.set_page_config(page_title="Predictive Dashboard Generator", page_icon="📈"
 
 # --- Banner and Title ---
 # --- Header with Gradient Title ---
-st.markdown("""
-<div style='text-align: center'>
-    <img src='https://raw.githubusercontent.com/Vikrantthenge/predictive_dashboard/main/predictive_dashboard_banner.png' width='200'/>
-</div>
-""", unsafe_allow_html=True)
-
+# --- Header Branding ---
 st.markdown("""
 <style>
 .gradient-title {
@@ -40,10 +35,14 @@ st.markdown("""
     margin-top: 10px;
 }
 </style>
-<h1 class='gradient-title'>📈🔮 Predictive Dashboard 🔮📈</h1>
+
+<div style='text-align: center; padding-top: 10px;'>
+    <img src='https://raw.githubusercontent.com/Vikrantthenge/predictive_dashboard/main/predictive_dashboard_banner.png' width='240' style='border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);'/>
+    <h1 class='gradient-title'>📊 Predictive Dashboard</h1>
+    <h4 style='color: #6C757D;'>Empowering decisions through data-driven insights</h4>
+</div>
 """, unsafe_allow_html=True)
 
-st.markdown("<h4 style='text-align: center; color: #6C757D;'>Empowering decisions through data-driven insights</h4>", unsafe_allow_html=True)
 st.markdown("---")
 
 # --- Sidebar Inputs ---
