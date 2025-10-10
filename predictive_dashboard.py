@@ -115,15 +115,19 @@ elif use_sample:
     try:
         df, loaded_fname = load_sample()
         st.info(f"✅ Loaded sample file: {loaded_fname}")
+
         # --- Validate Required Columns ---
-try:
-    missing = [col for col in [date_col, target_col] if col not in df.columns]
-    if missing:
-        st.error(f"❌ Required columns missing: {', '.join(missing)} not found in uploaded data.")
-        st.write("📋 Available columns:", df.columns.tolist())
+        missing = [col for col in [date_col, target_col] if col not in df.columns]
+        if missing:
+            st.error(f"❌ Required columns missing: {', '.join(missing)} not found in uploaded data.")
+            st.write("📋 Available columns:", df.columns.tolist())
+            st.stop()
+
+    except Exception as e:
+        st.error(f"❌ Sample load failed: {e}")
         st.stop()
-except Exception as e:
-    st.error(f"❌ Column validation failed: {e}")
+else:
+    st.error("❌ No data source selected. Please upload a CSV or enable sample data.")
     st.stop()
 
 # --- Validate DataFrame ---
