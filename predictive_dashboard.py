@@ -57,34 +57,6 @@ st.markdown("""
 st.markdown("<h4 style='text-align: center; color: #6C757D;'>Empowering decisions through data-driven insights</h4>", unsafe_allow_html=True)
 st.markdown("---")
 
-# Smoothed Line Graph Section -
-
-df = pd.DataFrame({
-    'date': pd.date_range(start='2023-01-01', periods=30),
-    'value': [2, 1.5, 2.2, 1.8, 2.5, 2.9, 3.1, 2.7, 2.4, 2.6,
-              2.8, 3.0, 2.9, 2.7, 2.5, 2.3, 2.1, 1.9, 1.7, 1.5,
-              1.3, 1.1, 0.9, 0.7, 0.5, 0.3, 0.1, -0.1, -0.3, -0.5]
-})
-
-# Calculate moving average
-df['moving_avg'] = df['value'].rolling(window=5).mean()
-df.dropna(subset=['moving_avg'], inplace=True)
-
-# Create Plotly chart
-fig = px.line(df, x='date', y='moving_avg',
-              title='📈 Smoothed Performance Trend',
-              labels={'moving_avg': 'Moving Average'},
-              template='plotly_dark')
-
-fig.update_traces(line=dict(color='orange', width=3))
-fig.update_layout(
-    title_font=dict(size=20),
-    title_x=0.0  # Left-aligned title
-)
-
-# Display in Streamlit
-st.plotly_chart(fig, use_container_width=True)
-
 
 # --- Sidebar Inputs ---
 st.sidebar.header("User Input")
@@ -200,6 +172,34 @@ if 'df' in locals():
     st.write("🎯 Target column:", target_col)
 else:
     st.warning("⚠️ DataFrame not loaded yet. Please upload a CSV or use sample data.")
+
+    # Smoothed Line Graph Section -
+
+df = pd.DataFrame({
+    'date': pd.date_range(start='2023-01-01', periods=30),
+    'value': [2, 1.5, 2.2, 1.8, 2.5, 2.9, 3.1, 2.7, 2.4, 2.6,
+              2.8, 3.0, 2.9, 2.7, 2.5, 2.3, 2.1, 1.9, 1.7, 1.5,
+              1.3, 1.1, 0.9, 0.7, 0.5, 0.3, 0.1, -0.1, -0.3, -0.5]
+})
+
+# Calculate moving average
+df['moving_avg'] = df['value'].rolling(window=5).mean()
+df.dropna(subset=['moving_avg'], inplace=True)
+
+# Create Plotly chart
+fig = px.line(df, x='date', y='moving_avg',
+              title='📈 Smoothed Performance Trend',
+              labels={'moving_avg': 'Moving Average'},
+              template='plotly_dark')
+
+fig.update_traces(line=dict(color='orange', width=3))
+fig.update_layout(
+    title_font=dict(size=20),
+    title_x=0.0  # Left-aligned title
+)
+
+# Display in Streamlit
+st.plotly_chart(fig, use_container_width=True)
 
     # --- Validate DataFrame before feature engineering ---
 if 'df' not in locals() or df.empty:
