@@ -24,7 +24,7 @@ st.set_page_config(page_title="Predictive Dashboard Generator", page_icon="📈"
 # --- Header with Gradient Title ---
 st.markdown("""
 <div style='text-align: center'>
-    <img src='https://raw.githubusercontent.com/Vikrantthenge/predictive_dashboard/main/predictive_dashboard_banner.png' width='200'/>
+    <img src='https://github.com/Vikrantthenge/predictive_dashboard/blob/main/create%20a%20matching%20he.png' width='250'/>
 </div>
 
 """, unsafe_allow_html=True)
