@@ -229,9 +229,6 @@ st.metric(
     delta=f"as of {latest_date.strftime('%Y-%m-%d')}"
 )
 
-# Display in Streamlit
-st.plotly_chart(fig, use_container_width=True)
-
     # --- Validate DataFrame before feature engineering ---
 if 'df' not in locals() or df.empty:
     st.error("❌ DataFrame not loaded or is empty. Please upload a valid CSV or use sample data.")
