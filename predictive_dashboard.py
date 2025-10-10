@@ -17,8 +17,30 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
+
 # --- Page Config ---
 st.set_page_config(page_title="Predictive Dashboard Generator", page_icon="📈", layout="wide")
+
+
+# --- Smoothed Line Graph Section ---
+df = pd.DataFrame({
+    'date': pd.date_range(start='2023-01-01', periods=30),
+    'value': [2, 1.5, 2.2, 1.8, 2.5, 2.9, 3.1, 2.7, 2.4, 2.6,
+              2.8, 3.0, 2.9, 2.7, 2.5, 2.3, 2.1, 1.9, 1.7, 1.5,
+              1.3, 1.1, 0.9, 0.7, 0.5, 0.3, 0.1, -0.1, -0.3, -0.5]
+})
+
+df['moving_avg'] = df['value'].rolling(window=5).mean()
+
+fig = px.line(df, x='date', y='moving_avg',
+              title='📈 Smoothed Performance Trend',
+              labels={'moving_avg': 'Moving Average'},
+              template='plotly_dark')
+
+fig.update_traces(line=dict(color='orange', width=3))
+fig.update_layout(title_font=dict(size=20), title_x=0.5)
+
+st.plotly_chart(fig, use_container_width=True)
 
 # --- Banner and Title ---
 # --- Header with Gradient Title ---
