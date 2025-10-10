@@ -57,14 +57,14 @@ import numpy as np
 def generate_synthetic_maintenance_data():
     dates = pd.date_range(start="2023-01-01", periods=120, freq="D")
     np.random.seed(42)
-    base = np.sin(np.linspace(0, 6, 120)) * 2 + 5  # seasonal pattern
+    base = np.sin(np.linspace(0, 6, 120)) * 2 + 5
     noise = np.random.normal(0, 0.5, 120)
     failures = (base + noise).round().astype(int)
     df = pd.DataFrame({"date": dates, "failures": failures})
     df.to_csv("synthetic_maintenance_data.csv", index=False)
     return df
 
-# --- Replace Sample Loader ---
+# --- Sample Loader ---
 @st.cache_data
 def load_sample():
     try:
@@ -73,15 +73,50 @@ def load_sample():
     except FileNotFoundError:
         df = generate_synthetic_maintenance_data()
         return df, "synthetic_maintenance_data.csv"
-    
-    if 'df' not in locals() or df.empty:
-     st.error("❌ No data loaded. Please upload a valid CSV or use sample data.")
-    st.stop()
 
 # --- Sidebar Reminder ---
-st.sidebar.markdown("ℹ️ Tip: Sample data includes 120 days of daily failure counts. Use 'date' as Date column and 'failures' as Target column.")
+st.sidebar.markdown("ℹ️ Tip: Sample data includes 120 days of daily failure counts. Use `date` as Date column and `failures` as Target column.")
 
+# --- Load Data ---
+df = None
+if uploaded is not None:
+    try:
+        uploaded.seek(0)
+        df = pd.read_csv(uploaded, encoding=encoding_choice)
+        st.info("✅ Uploaded file loaded successfully.")
+        use_sample = False  # override sample toggle
+    except Exception as e:
+        st.error(f"❌ Failed to read uploaded file: {e}")
+        st.stop()
+elif use_sample:
+    try:
+        df, loaded_fname = load_sample()
+        st.info(f"✅ Loaded sample file: {loaded_fname}")
+    except Exception as e:
+        st.error(f"❌ Sample load failed: {e}")
+        st.stop()
+else:
+    st.error("❌ No data source selected. Please upload a CSV or enable sample data.")
+    st.stop()
 
+# --- Validate DataFrame ---
+if df is None or df.empty:
+    st.error("❌ DataFrame is empty or not loaded. Please check your file or sample toggle.")
+    st.stop()
+
+if date_col not in df.columns or target_col not in df.columns:
+    st.error(f"❌ Required columns missing: '{date_col}' or '{target_col}' not found in uploaded data.")
+    st.write("📋 Available columns:", df.columns.tolist())
+    st.stop()
+
+# --- Parse Dates ---
+try:
+    df[date_col] = pd.to_datetime(df[date_col], errors="coerce").dt.normalize()
+    df = df.dropna(subset=[date_col, target_col]).sort_values(by=date_col)
+except Exception as e:
+    st.error(f"❌ Date parsing failed: {e}")
+    st.stop()
+    
 # --- Demo Chart ---
 demo_data = np.random.randn(100, 3)
 demo_df = pd.DataFrame(demo_data, columns=["Feature A", "Feature B", "Feature C"])
