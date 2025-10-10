@@ -57,7 +57,8 @@ st.markdown("""
 st.markdown("<h4 style='text-align: center; color: #6C757D;'>Empowering decisions through data-driven insights</h4>", unsafe_allow_html=True)
 st.markdown("---")
 
-Smoothed Line Graph Section ---
+# Smoothed Line Graph Section -
+
 df = pd.DataFrame({
     'date': pd.date_range(start='2023-01-01', periods=30),
     'value': [2, 1.5, 2.2, 1.8, 2.5, 2.9, 3.1, 2.7, 2.4, 2.6,
