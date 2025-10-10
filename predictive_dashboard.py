@@ -40,17 +40,29 @@ st.markdown("""
     -webkit-text-fill-color: transparent;
     margin-top: 10px;
 }
+# --- Themed Title Block with Blue Background ---
+st.markdown("""
+<style>
+.title-container {
+    background-color: #007BFF;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 10px;
+}
+.gradient-title {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 </style>
 
-<div style='text-align: center; padding-top: 10px;'>
-    <img src='https://raw.githubusercontent.com/Vikrantthenge/predictive_dashboard/main/predictive_dashboard_banner.png' width='260' style='border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);'/>
-    <h1 class='gradient-title'>📈🔮 Predictive Dashboard 🔮📈</h1>
-    <h4 style='color: #6C757D;'>AI-powered insights for smarter decisions</h4>
+<div class='title-container'>
+    <div class='gradient-title'>📈🔮 Predictive Dashboard 🔮📈</div>
 </div>
 """, unsafe_allow_html=True)
-
-st.markdown("---")
-
 
 # --- Sidebar Inputs ---
 st.sidebar.header("User Input")
