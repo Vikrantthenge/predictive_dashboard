@@ -22,6 +22,14 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 st.set_page_config(page_title="Predictive Dashboard Generator", page_icon="📈", layout="wide")
 
 
+# --- Banner and Title ---
+# --- Header with Gradient Title ---
+st.markdown("""
+<div style='text-align: center'>
+    <img src='https://github.com/Vikrantthenge/predictive_dashboard/blob/main/asset/create%20a%20matching%20he.png?raw=true' width='250'/>
+</div>
+""", unsafe_allow_html=True)
+
 # --- Smoothed Line Graph Section ---
 df = pd.DataFrame({
     'date': pd.date_range(start='2023-01-01', periods=30),
@@ -42,13 +50,6 @@ fig.update_layout(title_font=dict(size=20), title_x=0.5)
 
 st.plotly_chart(fig, use_container_width=True)
 
-# --- Banner and Title ---
-# --- Header with Gradient Title ---
-st.markdown("""
-<div style='text-align: center'>
-    <img src='https://github.com/Vikrantthenge/predictive_dashboard/blob/main/asset/create%20a%20matching%20he.png?raw=true' width='250'/>
-</div>
-""", unsafe_allow_html=True)
 
 # --- Predictive Dashboard Header (Styled to Match Uploaded Visual) ---
 st.markdown("""
