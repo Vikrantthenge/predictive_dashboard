@@ -73,6 +73,10 @@ def load_sample():
     except FileNotFoundError:
         df = generate_synthetic_maintenance_data()
         return df, "synthetic_maintenance_data.csv"
+    
+    if 'df' not in locals() or df.empty:
+     st.error("❌ No data loaded. Please upload a valid CSV or use sample data.")
+    st.stop()
 
 # --- Sidebar Reminder ---
 st.sidebar.markdown("ℹ️ Tip: Sample data includes 120 days of daily failure counts. Use 'date' as Date column and 'failures' as Target column.")
@@ -102,9 +106,12 @@ def make_features(frame, date_col, target_col):
     feats = ["t","dow","dom","month","lag_1","lag_7","lag_14","roll_7","roll_14"]
     return Xy, feats
 
-st.write("📋 Columns in DataFrame:", df.columns.tolist())
-st.write("🗓️ Date column:", date_col)
-st.write("🎯 Target column:", target_col)
+if 'df' in locals():
+    st.write("📋 Columns in DataFrame:", df.columns.tolist())
+    st.write("🗓️ Date column:", date_col)
+    st.write("🎯 Target column:", target_col)
+else:
+    st.warning("⚠️ DataFrame not loaded yet. Please upload a CSV or use sample data.")
 Xy, feats = make_features(df, date_col, target_col)
 X = Xy[feats]
 y = Xy["y"]
