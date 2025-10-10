@@ -18,39 +18,31 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 # --- Page Config ---
-# --- App Title with Flair ---
-st.markdown("""
-<style>
-.title-flair {
-    font-size: 32px;
-    font-weight: 700;
-    text-align: center;
-    background: linear-gradient(90deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: pulse 2s infinite;
-    margin-top: 20px;
-}
-@keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.6; }
-    100% { opacity: 1; }
-}
-</style>
-<div class='title-flair'>🚀 Predictive Dashboard</div>
-""", unsafe_allow_html=True)
-# st.set_page_config(page_title="Predictive Dashboard Generator", page_icon="📈", layout="wide")
+st.set_page_config(page_title="Predictive Dashboard Generator", page_icon="📈", layout="wide")
 
 # --- Banner and Title ---
-st.markdown(
-    """
-    <div style='text-align: center'>
-        <img src='https://raw.githubusercontent.com/Vikrantthenge/predictive_dashboard/main/predictive_dashboard_banner.png' width='200'/>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-st.markdown("<h1 style='text-align: center; color: #4B8BBE;'>Predictive Dashboard</h1>", unsafe_allow_html=True)
+# --- Header with Gradient Title ---
+st.markdown("""
+<div style='text-align: center'>
+    <img src='https://raw.githubusercontent.com/Vikrantthenge/predictive_dashboard/main/predictive_dashboard_banner.png' width='200'/>
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+.gradient-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+}
+</style>
+<h1 class='gradient-title'>🚀 Predictive Dashboard</h1>
+""", unsafe_allow_html=True)
+
 st.markdown("<h4 style='text-align: center; color: #6C757D;'>Empowering decisions through data-driven insights</h4>", unsafe_allow_html=True)
 st.markdown("---")
 
