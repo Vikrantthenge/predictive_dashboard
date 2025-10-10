@@ -1,6 +1,17 @@
 streamlit
 pandas
 numpy
+scikit-learn
+matplotlib
+seaborn
+plotly
+prophet
+cmdstanpy
+
+
+streamlit
+pandas
+numpy
 plotly
 scikit-learn
 prophet
