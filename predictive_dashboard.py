@@ -141,10 +141,13 @@ if date_col not in df.columns or target_col not in df.columns:
 
 # --- Parse Dates ---
 try:
-    df[date_col] = pd.to_datetime(df[date_col], errors="coerce").dt.normalize()
-    df = df.dropna(subset=[date_col, target_col]).sort_values(by=date_col)
+    missing = [col for col in [date_col, target_col] if col not in df.columns]
+    if missing:
+        st.error(f"❌ Required columns missing: {', '.join(missing)} not found in uploaded data.")
+        st.write("📋 Available columns:", df.columns.tolist())
+        st.stop()
 except Exception as e:
-    st.error(f"❌ Date parsing failed: {e}")
+    st.error(f"❌ Column validation failed: {e}")
     st.stop()
 
 # --- Demo Chart ---
