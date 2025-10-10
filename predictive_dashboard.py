@@ -50,44 +50,33 @@ horizon = st.sidebar.number_input("Forecast horizon (days)", min_value=7, max_va
 test_size = st.sidebar.slider("Test size (%)", min_value=10, max_value=40, value=20, step=5)
 download_toggle = st.sidebar.checkbox("Enable predictions download", value=True)
 
-# --- Load Sample or Uploaded Data ---
+# --- Synthetic Sample Generator ---
+import pandas as pd
+import numpy as np
+
+def generate_synthetic_maintenance_data():
+    dates = pd.date_range(start="2023-01-01", periods=120, freq="D")
+    np.random.seed(42)
+    base = np.sin(np.linspace(0, 6, 120)) * 2 + 5  # seasonal pattern
+    noise = np.random.normal(0, 0.5, 120)
+    failures = (base + noise).round().astype(int)
+    df = pd.DataFrame({"date": dates, "failures": failures})
+    df.to_csv("synthetic_maintenance_data.csv", index=False)
+    return df
+
+# --- Replace Sample Loader ---
 @st.cache_data
 def load_sample():
-    for fname in ("sales_data_small_iso.csv", "sales_data_small.csv", "sales_data.csv"):
-        if os.path.exists(fname):
-            try:
-                df = pd.read_csv(fname)
-                return df, fname
-            except Exception:
-                continue
-    raise FileNotFoundError("No sample CSV found.")
-
-def try_parse_dates(df, date_col):
-    if date_col not in df.columns:
-        raise KeyError(f"Date column '{date_col}' not found.")
     try:
-        df[date_col] = pd.to_datetime(df[date_col], errors="coerce").dt.normalize()
-        return df
-    except Exception:
-        st.error("Date parsing failed.")
-        st.stop()
+        df = pd.read_csv("synthetic_maintenance_data.csv")
+        return df, "synthetic_maintenance_data.csv"
+    except FileNotFoundError:
+        df = generate_synthetic_maintenance_data()
+        return df, "synthetic_maintenance_data.csv"
 
-if use_sample:
-    df, loaded_fname = load_sample()
-    st.info(f"Loaded sample file: {loaded_fname}")
-elif uploaded is not None:
-    uploaded.seek(0)
-    df = pd.read_csv(uploaded, encoding=encoding_choice)
-    st.info("Uploaded file loaded.")
-else:
-    st.stop()
+# --- Sidebar Reminder ---
+st.sidebar.markdown("ℹ️ Tip: Sample data includes 120 days of daily failure counts. Use 'date' as Date column and 'failures' as Target column.")
 
-df = try_parse_dates(df, date_col)
-if target_col not in df.columns:
-    st.error(f"Target column '{target_col}' not found.")
-    st.stop()
-
-df = df.dropna(subset=[date_col, target_col]).sort_values(by=date_col)
 
 # --- Demo Chart ---
 demo_data = np.random.randn(100, 3)
