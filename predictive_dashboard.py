@@ -209,6 +209,49 @@ def run_model_prediction(X, y, model_name, test_size, enable_download=True):
 # --- Run Prediction ---
 model = run_model_prediction(X, y, model_name, test_size, enable_download=download_toggle)
 
+# --- Model Selector ---
+model_name = st.sidebar.selectbox("Model", ["Linear Regression", "Random Forest", "Prophet", "ARIMA"])
+
+# --- Model Dispatcher ---
+def run_model_prediction(X, y, model_name, test_size=0.2, enable_download=False):
+    from sklearn.linear_model import LinearRegression
+    from sklearn.ensemble import RandomForestRegressor
+    from sklearn.metrics import mean_squared_error
+    from sklearn.model_selection import train_test_split
+
+    if model_name in ["Linear Regression", "Random Forest"]:
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
+        model = LinearRegression() if model_name == "Linear Regression" else RandomForestRegressor(n_estimators=300, random_state=42)
+        model.fit(X_train, y_train)
+        y_pred = model.predict(X_test)
+        rmse = mean_squared_error(y_test, y_pred, squared=False)
+        st.success(f"✅ {model_name} RMSE: {rmse:.2f}")
+        if enable_download:
+            st.download_button("📥 Download Predictions", pd.DataFrame({"Actual": y_test, "Predicted": y_pred}).to_csv(index=False), file_name="predictions.csv")
+        return model
+
+    elif model_name == "Prophet":
+        from prophet import Prophet
+        df_prophet = X.copy()
+        df_prophet = df_prophet.rename(columns={"ds": "ds", "y": "y"})
+        model = Prophet()
+        model.fit(df_prophet[["ds", "y"]])
+        future = model.make_future_dataframe(periods=horizon)
+        forecast = model.predict(future)
+        st.line_chart(forecast[["ds", "yhat"]].set_index("ds"))
+        return model
+
+    elif model_name == "ARIMA":
+        from pmdarima import auto_arima
+        model = auto_arima(y, seasonal=False, stepwise=True)
+        forecast = model.predict(n_periods=horizon)
+        st.line_chart(pd.DataFrame({"Forecast": forecast}))
+        return model
+
+    else:
+        st.error("❌ Unsupported model selected.")
+        return None
+
 # --- Forecast Future ---
 last_date = Xy["ds"].max()
 future_dates = pd.date_range(last_date + timedelta(days=1), periods=horizon, freq="D")
