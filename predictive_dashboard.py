@@ -181,31 +181,53 @@ if 'df' in locals():
 else:
     st.warning("⚠️ DataFrame not loaded yet. Please upload a CSV or use sample data.")
 
-
 # --- Smoothed Performance Trend ---
 st.subheader("📈 Smoothed Performance Trend")
 
-# Ensure target column is numeric before rolling
+# Interactive smoothing control
+window_size = st.slider(
+    "Select smoothing window (moving average)",
+    min_value=3, max_value=30, value=5, step=1
+)
+
+# Ensure target column is numeric
 df[target_col] = pd.to_numeric(df[target_col], errors="coerce")
 
 # Calculate moving average
-df['moving_avg'] = df[target_col].rolling(window=5).mean()
-df.dropna(subset=['moving_avg'], inplace=True)
+df['moving_avg'] = df[target_col].rolling(window=window_size, min_periods=1).mean()
+
+# Drop NaNs for clean visualization
+df_clean = df.dropna(subset=['moving_avg']).copy()
 
 # Create Plotly chart
-fig = px.line(df, x=date_col, y='moving_avg',
-              title='📈 Smoothed Performance Trend',
-              labels={'moving_avg': 'Moving Average'},
-              template='plotly_dark')
-
-fig.update_traces(line=dict(color='orange', width=3))
-fig.update_layout(
-    title_font=dict(size=20),
-    title_x=0.0  # Left-aligned title
+fig_trend = px.line(
+    df_clean,
+    x=date_col,
+    y='moving_avg',
+    title=f"📈 Smoothed Performance Trend (Window = {window_size})",
+    labels={date_col: "Date", 'moving_avg': 'Moving Average'},
+    template='plotly_dark'
 )
 
-st.plotly_chart(fig, use_container_width=True)
+fig_trend.update_traces(line=dict(color='orange', width=3))
+fig_trend.update_layout(
+    title_font=dict(size=20),
+    title_x=0.0,
+    hovermode='x unified',
+    margin=dict(l=20, r=20, t=60, b=20)
+)
 
+# Display chart once (unique key avoids duplicate element error)
+st.plotly_chart(fig_trend, use_container_width=True, key="smoothed_trend_chart")
+
+# Optional summary metric
+latest_val = df_clean['moving_avg'].iloc[-1]
+latest_date = df_clean[date_col].iloc[-1]
+st.metric(
+    label="Latest Smoothed Value",
+    value=f"{latest_val:.2f}",
+    delta=f"as of {latest_date.strftime('%Y-%m-%d')}"
+)
 
 # Display in Streamlit
 st.plotly_chart(fig, use_container_width=True)
