@@ -12,6 +12,7 @@
 
 [![Predictive Maintenance](https://img.shields.io/badge/Predictive-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](#)
 
+[![Predictive Maintenance](https://img.shields.io/badge/Predictive_Maintenance-AWS_EC2-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](http://16.171.39.217:8501/)
 
 ## 🚀 Overview
 
