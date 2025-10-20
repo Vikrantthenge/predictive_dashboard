@@ -1,4 +1,4 @@
-# 📈 Predictive Dashboard Generator
+# 📈 Predictive Maintenance Dashboard 
 
 [![Live Demo](https://img.shields.io/badge/🚀-Streamlit_App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://predictivedashboard-vikrantthenge.streamlit.app)
 [![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)
@@ -6,13 +6,6 @@
 
 ---
 
-# 📈 ForecastFlow
-
-[![Live Demo](https://img.shields.io/badge/🚀-Streamlit_App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://predictivedashboard-vikrantthenge.streamlit.app)
-[![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)
-[![Tech Stack](https://img.shields.io/badge/🧠-Python_·_Streamlit_·_Pandas_·_Scikit--learn_·_Prophet_·_Plotly-6A5ACD?style=for-the-badge)](#)
-
----
 
 ## 🚀 Overview
 
