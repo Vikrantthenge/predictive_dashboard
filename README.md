@@ -14,7 +14,6 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" height="40" style="vertical-align:middle; margin-right:10px;">
   <img src="https://img.shields.io/badge/Predictive-Maintenance-red?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="Predictive Maintenance Badge" style="vertical-align:middle;">
 </p>
-
 ## 🚀 Overview
 
 **ForecastFlow** is a recruiter-facing Streamlit app that transforms raw business data into **actionable forecasts and insights**.  
