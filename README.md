@@ -9,9 +9,18 @@
 [![Tech Stack](https://img.shields.io/badge/🧠-Python_·_Streamlit_·_Pandas_·_Scikit--learn_·_Prophet_·_Plotly-6A5ACD?style=for-the-badge)](#)
 
 
-
-
-
+<table>
+  <tr>
+    <td>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" height="40">
+    </td>
+    <td>
+      <a href="http://16.171.39.217:8501/">
+        <img src="https://img.shields.io/badge/☁️-AWS_EC2_App-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="Live EC2 Demo">
+      </a>
+    </td>
+  </tr>
+</table>
 
 
 
