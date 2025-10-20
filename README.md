@@ -6,10 +6,25 @@
 
 ---
 
+# 📈 ForecastFlow
+
+[![Live Demo](https://img.shields.io/badge/🚀-Streamlit_App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://predictivedashboard-vikrantthenge.streamlit.app)
+[![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)
+[![Tech Stack](https://img.shields.io/badge/🧠-Python_·_Streamlit_·_Pandas_·_Scikit--learn_·_Prophet_·_Plotly-6A5ACD?style=for-the-badge)](#)
+
+---
+
 ## 🚀 Overview
 
-The **Predictive Dashboard Generator** is a recruiter-facing Streamlit app that transforms raw business data into **actionable forecasts and insights**.  
+**ForecastFlow** is a recruiter-facing Streamlit app that transforms raw business data into **actionable forecasts and insights**.  
 It empowers users to upload datasets, explore trends, select forecasting models, and visualize predictions — all in a responsive, production-ready dashboard.
+
+---
+
+## ☁️ Cloud Deployment
+
+This app is deployed on **AWS EC2 Free Tier**, configured for public access with optimized security group rules and port bindings.  
+It ensures recruiter-grade availability and cost-efficient hosting for live dashboard previews.
 
 ---
 
@@ -64,7 +79,6 @@ numpy>=1.24.0
 scikit-learn>=1.3.0
 plotly>=5.18.0
 prophet>=1.1.5
-
 
 
 
