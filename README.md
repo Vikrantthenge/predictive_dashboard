@@ -1,15 +1,12 @@
 # 📈 Predictive Maintenance Dashboard 
 
-[![Live Demo](https://img.shields.io/badge/🚀-Streamlit_App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://predictivedashboard-vikrantthenge.streamlit.app)
+[![Live EC2 Demo](https://img.shields.io/badge/☁️-AWS_EC2_App-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](http://16.171.39.217:8501/)
 [![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)
 [![Tech Stack](https://img.shields.io/badge/🧠-Python_·_Streamlit_·_Pandas_·_Scikit--learn_·_Prophet_·_Plotly-6A5ACD?style=for-the-badge)](#)
 
-[![Live EC2 Demo](https://img.shields.io/badge/☁️-AWS_EC2_App-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](http://16.171.39.217:8501/)
 
-<a href="http://16.171.39.217:8501/">
-  <img src="https://img.shields.io/badge/☁️-AWS_EC2_App-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="Live EC2 Demo">
-</a>
----
+
+
 
 
 ## 🚀 Overview
