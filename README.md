@@ -14,7 +14,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" height="25" style="vertical-align:middle; margin-right:12px;">
 <p align="left">
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" height="40" style="vertical-align:middle; margin-right:12px;">
-  <img src="https://img.shields.io/badge/Predictive-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="Predictive Maintenance Badge" style="vertical-align:middle;">
+  <img src="https://img.shields.io/badge/**Predictive**-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="Predictive Maintenance Badge" style="vertical-align:middle;">
 </p>
 
 ## 🚀 Overview
