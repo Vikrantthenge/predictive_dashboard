@@ -10,6 +10,9 @@
 [![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)
 [![Tech Stack](https://img.shields.io/badge/🧠-Python_·_Streamlit_·_Pandas_·_Scikit--learn_·_Prophet_·_Plotly-6A5ACD?style=for-the-badge)](#)
 
+[![Predictive](https://img.shields.io/badge/Predictive-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](#)
+[![Maintenance](https://img.shields.io/badge-Maintenance-252F3E?style=for-the-badge)](#)
+
 
 ## 🚀 Overview
 
