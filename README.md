@@ -10,11 +10,7 @@
 [![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)
 [![Tech Stack](https://img.shields.io/badge/🧠-Python_·_Streamlit_·_Pandas_·_Scikit--learn_·_Prophet_·_Plotly-6A5ACD?style=for-the-badge)](#)
 
-[![Predictive Maintenance](https://img.shields.io/badge/Predictive-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](#)
 
-[![Predictive Maintenance](https://img.shields.io/badge/Predictive_Maintenance-AWS_EC2-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](http://16.171.39.217:8501/)
-
-[![Predictive Maintenance](https://img.shields.io/badge/Predictive_Maintenance-AWS_EC2-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](http://16.171.39.217:8501/)
 
 ## 🚀 Overview
 
