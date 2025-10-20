@@ -12,7 +12,7 @@
 
 <p align="left">
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" height="25" style="vertical-align:middle; margin-right:12px;">
- [![Predictive](https://img.shields.io/badge/🔍-Predictive-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](#)
+   [![Predictive](https://img.shields.io/badge/🔍-Predictive-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](#)
 [![Maintenance](https://img.shields.io/badge/-Maintenance-red?style=for-the-badge)](#)
 
 ## 🚀 Overview
