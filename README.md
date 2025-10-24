@@ -8,7 +8,9 @@
 </p>
 
 [![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)  
-[![Tech Stack](https://img.shields.io/badge/🧠-Python_·_Streamlit_·_Pandas_·_Scikit--learn_·_Prophet_·_Plotly-6A5ACD?style=for-the-badge)](#)
+[![Tech Stack](https://img.shields.io/badge/🧠-Python_·_Streamlit_·_Pandas_·_Scikit--learn_·_Prophet_·_Plotly_·_AWS_EC2-6A5ACD?style=for-the-badge)](#)
+
+☁️ Deployed on AWS EC2 Free Tier — auto-restarting, IP-restricted, and recruiter-accessible
 
 ---
 
