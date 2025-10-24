@@ -1,6 +1,6 @@
 # 📈 Predictive Maintenance Dashboard
 
-Your app is now live and auto-starts on reboot.
+App is now live and auto-starts on reboot.
 
 <p align="left">
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" height="20">
