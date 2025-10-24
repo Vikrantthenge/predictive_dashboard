@@ -5,9 +5,10 @@
   <a href="http://16.171.175.12:8501/">
     <img src="https://img.shields.io/badge/Predictive-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="Live EC2 Demo">
   </a>
+  <a href="http://16.171.174.123:8501">
+    <img src="https://img.shields.io/badge/Live%20App-Streamlit%20Dashboard-brightgreen?logo=streamlit" alt="Open Dashboard">
+  </a>
 </p>
-
-[![Open Dashboard](https://img.shields.io/badge/Live%20App-Streamlit%20Dashboard-brightgreen?logo=streamlit)](http://16.171.174.123:8501)
 
 [![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)  
 
