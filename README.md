@@ -7,7 +7,7 @@
   </a>
 </p>
 
-[![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)
+[![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)  
 [![Tech Stack](https://img.shields.io/badge/🧠-Python_·_Streamlit_·_Pandas_·_Scikit--learn_·_Prophet_·_Plotly-6A5ACD?style=for-the-badge)](#)
 
 ---
@@ -20,7 +20,7 @@ Your Streamlit app is now live and auto-starts on reboot.
 
 📌 **Auto-start enabled** via `systemd`  
 🔁 No manual SSH needed after reboot  
-🔒 Optional: Restrict access to Indian IP blocks  
+🔒 **Indian IP restriction** preferred for public access control  
 🌐 Optional: Map to `forecast.vikrantthenge.in`  
 📎 Scan below to open on mobile
 
@@ -28,7 +28,7 @@ Your Streamlit app is now live and auto-starts on reboot.
 
 ---
 
-## 🚀 Overview
+## 🧭 Overview
 
 **ForecastFlow** is a recruiter-facing Streamlit app that transforms raw business data into **actionable forecasts and insights**.  
 It empowers users to upload datasets, explore trends, select forecasting models, and visualize predictions — all in a responsive, production-ready dashboard.
@@ -37,8 +37,8 @@ It empowers users to upload datasets, explore trends, select forecasting models,
 
 ## ☁️ Cloud Deployment
 
-This app is deployed on **AWS EC2 Free Tier**, configured for public access with optimized security group rules and port bindings.  
-It ensures recruiter-grade availability and cost-efficient hosting for live dashboard previews.
+Deployed on **AWS EC2 Free Tier**, optimized for public access with secure port bindings and auto-restart.  
+Designed for recruiter-grade uptime and cost-efficient hosting of live dashboard previews.
 
 ---
 
@@ -46,12 +46,12 @@ It ensures recruiter-grade availability and cost-efficient hosting for live dash
 
 - 📁 **Upload or use sample data** — instantly start exploring insights  
 - 📊 **Dynamic Model Selection** — choose Linear Regression, Random Forest, or Prophet  
-- 📅 **Trend and Forecast Visualization** — observe seasonality and confidence intervals  
+- 📅 **Trend & Forecast Visualization** — seasonality, confidence intervals, and horizon control  
 - 📈 **Smoothed Performance Trends** — rolling averages with adjustable window size  
 - 📥 **Downloadable Outputs** — export predictions and forecasts in CSV format  
 - 🧠 **Feature Engineering** — lag features, rolling averages, calendar signals  
 - 🖼️ **Branded & Responsive UI** — sidebar controls, gradient header, emoji framing  
-- ⚠️ **ARIMA Notice** — ARIMA is disabled on cloud due to Cython limitations
+- ⚠️ **ARIMA Notice** — ARIMA disabled on cloud due to Cython limitations
 
 ---
 
@@ -62,15 +62,15 @@ The app expects a CSV with:
 - A **numeric target column** (e.g., `failures`, `sales`, `downtime`)
 - Optional **categorical columns** (e.g., `product`, `region`)
 
-You can use the built-in synthetic dataset or upload your own.
+Use the built-in synthetic dataset or upload your own.
 
 ---
 
 ## 🧪 Model Logic
 
-- **Linear Regression** and **Random Forest** use lag features, rolling averages, and calendar-based signals (day of week, month, etc.)
-- **Prophet** handles seasonality and trend decomposition automatically
-- Forecast horizon is user-defined (7–180 days)
+- **Linear Regression** and **Random Forest** use lag features, rolling averages, and calendar-based signals  
+- **Prophet** handles seasonality and trend decomposition automatically  
+- Forecast horizon is user-defined (7–180 days)  
 - Model metrics include **MAE**, **RMSE**, and **R²**
 
 ---
@@ -93,10 +93,3 @@ numpy>=1.24.0
 scikit-learn>=1.3.0
 plotly>=5.18.0
 prophet>=1.1.5
-
-<p align="center">
-  <img src="https://readme-logos.s3.amazonaws.com/streamlit-animated.gif" alt="Streamlit Logo" height="60">
-</p>
-
-[![GitHub Repo](https://img.shields.io/badge/View_Code-Repository-000?style=for-the-badge&logo=github)](https://github.com/vikrantthenge/predictive-maintenance-dashboard)
-[![Launch App](https://img.shields.io/badge/Open_App-16.171.175.12:8501-brightgreen?style=for-the-badge&logo=streamlit)](http://16.171.175.12:8501)
