@@ -1,8 +1,5 @@
 # 📈 Predictive Maintenance Dashboard
 
-
-## 🚀 Live Demo
-
 Your app is now live and auto-starts on reboot.
 
 <p align="left">
