@@ -1,5 +1,10 @@
 # 📈 Predictive Maintenance Dashboard
 
+
+## 🚀 Live Demo
+
+Your app is now live and auto-starts on reboot.
+
 <p align="left">
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" height="20">
   <a href="http://16.171.174.123:8501/">
@@ -23,13 +28,6 @@
 
 ☁️ Deployed on AWS EC2 Free Tier — auto-restarting, IP-restricted, and recruiter-accessible
 
----
-
-## 🚀 Live Demo
-
-Your Streamlit app is now live and auto-starts on reboot.
-
-[![Launch App](https://img.shields.io/badge/Open%20App-%2316.171.175.12:8501-brightgreen?style=for-the-badge&logo=streamlit)](http://16.171.175.12:8501)
 
 📌 **Auto-start enabled** via `systemd`  
 🔁 No manual SSH needed after reboot  
