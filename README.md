@@ -103,12 +103,10 @@ plotly>=5.18.0
 prophet>=1.1.5
 
 
-<div style="display: flex; align-items: center; gap: 10px;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" height="25">
-  <a href="http://16.171.174.123:8501/">
-    <img src="https://img.shields.io/badge/Predictive-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="Live EC2 Demo">
-  </a>
-  <a href="http://16.171.174.123:8501/">
-    <img src="https://img.shields.io/badge/Live%20App-Streamlit%20Dashboard-brightgreen?logo=streamlit" alt="Open Dashboard">
-  </a>
-</div>
+<table>
+  <tr>
+    <td><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" height="25"></td>
+    <td><a href="http://16.171.174.123:8501/"><img src="https://img.shields.io/badge/Predictive-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="Live EC2 Demo"></a></td>
+    <td><a href="http://16.171.174.123:8501/"><img src="https://img.shields.io/badge/Live%20App-Streamlit%20Dashboard-brightgreen?logo=streamlit" alt="Open Dashboard"></a></td>
+  </tr>
+</table>
