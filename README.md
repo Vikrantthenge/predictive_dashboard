@@ -1,8 +1,8 @@
-# 📈 Predictive Maintenance Dashboard 
+# 📈 Predictive Maintenance Dashboard
 
 <p align="left">
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" height="25">
-  <a href="http://16.171.39.217:8501/">
+  <a href="http://16.171.175.12:8501/">
     <img src="https://img.shields.io/badge/Predictive-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="Live EC2 Demo">
   </a>
 </p>
@@ -10,7 +10,23 @@
 [![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)
 [![Tech Stack](https://img.shields.io/badge/🧠-Python_·_Streamlit_·_Pandas_·_Scikit--learn_·_Prophet_·_Plotly-6A5ACD?style=for-the-badge)](#)
 
+---
 
+## 🚀 Live Demo
+
+Your Streamlit app is now live and auto-starts on reboot.
+
+[![Launch App](https://img.shields.io/badge/Open%20App-%2316.171.175.12:8501-brightgreen?style=for-the-badge&logo=streamlit)](http://16.171.175.12:8501)
+
+📌 **Auto-start enabled** via `systemd`  
+🔁 No manual SSH needed after reboot  
+🔒 Optional: Restrict access to Indian IP blocks  
+🌐 Optional: Map to `forecast.vikrantthenge.in`  
+📎 Scan below to open on mobile
+
+![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=http://16.171.175.12:8501)
+
+---
 
 ## 🚀 Overview
 
@@ -77,6 +93,3 @@ numpy>=1.24.0
 scikit-learn>=1.3.0
 plotly>=5.18.0
 prophet>=1.1.5
-
-
-
