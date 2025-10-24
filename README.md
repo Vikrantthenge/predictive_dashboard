@@ -93,3 +93,10 @@ numpy>=1.24.0
 scikit-learn>=1.3.0
 plotly>=5.18.0
 prophet>=1.1.5
+
+<p align="center">
+  <img src="https://readme-logos.s3.amazonaws.com/streamlit-animated.gif" alt="Streamlit Logo" height="60">
+</p>
+
+[![GitHub Repo](https://img.shields.io/badge/View_Code-Repository-000?style=for-the-badge&logo=github)](https://github.com/vikrantthenge/predictive-maintenance-dashboard)
+[![Launch App](https://img.shields.io/badge/Open_App-16.171.175.12:8501-brightgreen?style=for-the-badge&logo=streamlit)](http://16.171.175.12:8501)
