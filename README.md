@@ -7,6 +7,8 @@
   </a>
 </p>
 
+[![Open Dashboard](https://img.shields.io/badge/Live%20App-Streamlit%20Dashboard-brightgreen?logo=streamlit)](http://16.171.174.123:8501)
+
 [![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)  
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](#)
