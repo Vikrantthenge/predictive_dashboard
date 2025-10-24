@@ -8,7 +8,19 @@
 </p>
 
 [![Email](https://img.shields.io/badge/Outlook-vikrantthenge@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vikrantthenge@outlook.com)  
-[![Tech Stack](https://img.shields.io/badge/🧠-Python_·_Streamlit_·_Pandas_·_Scikit--learn_·_Prophet_·_Plotly_·_AWS_EC2-6A5ACD?style=for-the-badge)](#)
+
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](#)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](#)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](#)
+[![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](#)
+[![Prophet](https://img.shields.io/badge/Prophet-003B73?style=for-the-badge&logo=python&logoColor=white)](#)
+[![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)](#)
+[![AWS EC2](https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](#)
+
+[![Systemd](https://img.shields.io/badge/systemd-auto--restart-0078D4?style=for-the-badge&logo=linux&logoColor=white)](#)
+[![QR Access](https://img.shields.io/badge/QR-Mobile_Access-34A853?style=for-the-badge&logo=qr-code&logoColor=white)](#)
+[![IP Restriction](https://img.shields.io/badge/IP_Restricted-India_Only-FF0000?style=for-the-badge&logo=security&logoColor=white)](#)
+[![Custom Domain](https://img.shields.io/badge/Custom_Domain-forecast.vikrantthenge.in-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](#)
 
 ☁️ Deployed on AWS EC2 Free Tier — auto-restarting, IP-restricted, and recruiter-accessible
 
