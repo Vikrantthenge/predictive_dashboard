@@ -103,10 +103,6 @@ plotly>=5.18.0
 prophet>=1.1.5
 
 
-<table>
-  <tr>
-    <td><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" height="25"></td>
-    <td><a href="http://16.171.174.123:8501/"><img src="https://img.shields.io/badge/Predictive-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="Live EC2 Demo"></a></td>
-    <td><a href="http://16.171.174.123:8501/"><img src="https://img.shields.io/badge/Live%20App-Streamlit%20Dashboard-brightgreen?logo=streamlit" alt="Open Dashboard"></a></td>
-  </tr>
-</table>
+<a href="http://16.171.174.123:8501/">
+  <img src="https://img.shields.io/badge/AWS%20Predictive-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Predictive Maintenance">
+</a>
