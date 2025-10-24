@@ -1,7 +1,9 @@
 # 📈 Predictive Maintenance Dashboard
 
 <a href="http://16.171.174.123:8501/">
-  <img src="https://img.shields.io/badge/AWS%20Predictive-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Predictive Maintenance">
+ <p align="left">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" height="20">
+  <a href="http://16.171.174.123:8501/">Predictive-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Predictive Maintenance">
 </a>
 
 **Live dashboard hosted on EC2 — instantly accessible via public IP.**
