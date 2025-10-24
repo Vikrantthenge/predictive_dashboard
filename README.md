@@ -32,7 +32,7 @@
 🌐 Optional: Map to `forecast.vikrantthenge.in`  
 📎 Scan below to open on mobile
 
-![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=http://16.171.175.12:8501)
+![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=http://16.171.174.123:8501/)
 
 ---
 
