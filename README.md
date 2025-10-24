@@ -1,5 +1,9 @@
 # 📈 Predictive Maintenance Dashboard
 
+<a href="http://16.171.174.123:8501/">
+  <img src="https://img.shields.io/badge/AWS%20Predictive-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Predictive Maintenance">
+</a>
+
 **Live dashboard hosted on EC2 — instantly accessible via public IP.**
 
 <p align="left">
@@ -103,6 +107,4 @@ plotly>=5.18.0
 prophet>=1.1.5
 
 
-<a href="http://16.171.174.123:8501/">
-  <img src="https://img.shields.io/badge/AWS%20Predictive-Maintenance-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Predictive Maintenance">
-</a>
+
