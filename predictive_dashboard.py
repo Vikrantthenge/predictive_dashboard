@@ -278,13 +278,14 @@ if cat_cols:
 
 # ---------------------------
 # ---------------------------
+# ---------------------------
 # Footer
 # ---------------------------
 st.markdown("---")
 st.markdown("""
 <div style="text-align:center; padding-top:15px; font-family:Arial, sans-serif;">
     <p style="font-size:15px; color:#555; margin-bottom:8px;">
-        🔧 <b>Built by Vikrant Thenge</b> — Data & Analytics | Streamlit | Machine Learning
+        🔧 <b>Built by Vikrant Thenge</b> — Data & Analytics | Streamlit | Machine Learning | AWS EC2
     </p>
     <div style="margin-top:8px;">
         <a href="https://www.linkedin.com/in/vthenge/" target="_blank" title="LinkedIn" style="margin:0 10px;">
@@ -296,8 +297,11 @@ st.markdown("""
         <a href="mailto:vikrantthenge@outlook.com" title="Email" style="margin:0 10px;">
             <img src="https://img.icons8.com/color/48/000000/microsoft-outlook.png" width="26" style="vertical-align:middle;"/>
         </a>
+        <a href="https://aws.amazon.com/ec2/" target="_blank" title="AWS EC2 Deployment" style="margin:0 10px;">
+            <img src="https://img.icons8.com/color/48/000000/amazon-web-services.png" width="26" style="vertical-align:middle;"/>
+        </a>
     </div>
-    <p style="color:#888; font-size:13px; margin-top:10px;">© 2025 Vikrant Thenge</p>
+    <p style="color:#888; font-size:13px; margin-top:10px;">Deployed initially on AWS EC2, now hosted on Streamlit Cloud | © 2025 Vikrant Thenge</p>
 </div>
 """, unsafe_allow_html=True)
 
