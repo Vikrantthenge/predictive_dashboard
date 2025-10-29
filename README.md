@@ -39,8 +39,9 @@
 
 ## 🧭 Overview  
 
-The **Predictive Maintenance Dashboard** forecasts equipment failures and visualizes trends using historical maintenance data.  
-It helps reduce downtime, identify high-risk equipment, and optimize resource allocation through data-driven insights.
+Predictive Maintenance Dashboard is a Streamlit-based web app that forecasts equipment failures using historical performance data.
+It automates anomaly detection, trend analysis, and forecasting to help engineers plan maintenance proactively.
+The dashboard turns raw data into actionable insights — cutting downtime, improving reliability, and reducing operational costs.
 
 ---
 
