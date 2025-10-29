@@ -5,12 +5,12 @@
     <img src="https://streamlit.io/images/brand/streamlit-mark-color.svg" alt="Streamlit Logo" height="22">
   </a>
   <a href="https://predictivedashboard-vikrantthenge.streamlit.app/">
-    <img src="https://img.shields.io/badge/Live%20App-Streamlit_Cloud-brightgreen?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit Live App">
+    <img src="https://img.shields.io/badge/Live%20Dashboard-Streamlit_Cloud-brightgreen?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit Live App">
   </a>
 </p>
 
-**Live Dashboard:** [https://predictivedashboard-vikrantthenge.streamlit.app](https://predictivedashboard-vikrantthenge.streamlit.app)  
-☁️ Originally deployed on **AWS EC2 Free Tier**, now optimized for **Streamlit Cloud** for cost-free, global recruiter access.
+☁️ Originally deployed on **AWS EC2 Free Tier**, now hosted on **Streamlit Cloud** for global, zero-cost access.  
+🔗 [**Open Live Dashboard →**](https://predictivedashboard-vikrantthenge.streamlit.app)
 
 ---
 
