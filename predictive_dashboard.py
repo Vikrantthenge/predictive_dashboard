@@ -277,13 +277,27 @@ if cat_cols:
         st.plotly_chart(figc, use_container_width=True)
 
 # ---------------------------
+# ---------------------------
 # Footer
 # ---------------------------
 st.markdown("---")
 st.markdown("""
-<div style="text-align:center;font-size:14px;color:#666;">
-Built by <b>Vikrant Thenge</b> | Data & Analytics | Streamlit | Machine Learning  
-<a href="https://www.linkedin.com/in/vthenge/" target="_blank">LinkedIn</a> |
-<a href="https://github.com/Vikrantthenge" target="_blank">GitHub</a>
+<div style="text-align:center; padding-top:15px; font-family:Arial, sans-serif;">
+    <p style="font-size:15px; color:#555; margin-bottom:8px;">
+        🔧 <b>Built by Vikrant Thenge</b> — Data & Analytics | Streamlit | Machine Learning
+    </p>
+    <div style="margin-top:8px;">
+        <a href="https://www.linkedin.com/in/vthenge/" target="_blank" title="LinkedIn" style="margin:0 10px;">
+            <img src="https://img.icons8.com/color/48/000000/linkedin.png" width="26" style="vertical-align:middle;"/>
+        </a>
+        <a href="https://github.com/Vikrantthenge" target="_blank" title="GitHub" style="margin:0 10px;">
+            <img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" width="26" style="vertical-align:middle;"/>
+        </a>
+        <a href="mailto:vikrantthenge@outlook.com" title="Email" style="margin:0 10px;">
+            <img src="https://img.icons8.com/color/48/000000/microsoft-outlook.png" width="26" style="vertical-align:middle;"/>
+        </a>
+    </div>
+    <p style="color:#888; font-size:13px; margin-top:10px;">© 2025 Vikrant Thenge</p>
 </div>
 """, unsafe_allow_html=True)
+
